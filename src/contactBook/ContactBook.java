@@ -99,6 +99,7 @@ public class ContactBook {
                 if (contacts[i].getPhone() == number)
                     return contacts[i].getName();
             }
+
         }
         return null;
     }

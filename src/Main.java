@@ -158,5 +158,6 @@ public class Main {
         String s = cBook.contactPhone(number);
         if(s == null) System.out.println("Phone number does not exist.");
         else System.out.println(s);
+
     }
 }
