@@ -93,6 +93,7 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+
     public boolean hasConflicts() {
         if(this.getNumberOfContacts() <= 1){
             return false;
