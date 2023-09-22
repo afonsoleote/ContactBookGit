@@ -93,4 +93,18 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    public boolean hasConflicts() {
+        if(this.getNumberOfContacts() <= 1){
+            return false;
+        }
+
+        for(int i = 0; i < this.getNumberOfContacts() - 1; i++){
+            for(int j = i+1; j < this.getNumberOfContacts(); j++){
+                if(contacts[i].getPhone() == contacts[j].getPhone())
+                    return true;
+            }
+        }
+        return false;
+    }
 }
+
