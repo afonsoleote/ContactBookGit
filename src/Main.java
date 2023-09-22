@@ -24,8 +24,6 @@ public class Main {
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
-    public static final String CONFLICTS = "There are contacts that share phone numbers.";
-    public static final String NO_CONFLICTS = "All contacts have different phone numbers.";
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -56,10 +54,6 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
-                    break;
-
-                case CONTACTS_SAME_NUMBER:
-                    contactConflicts(cBook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -143,14 +137,6 @@ public class Main {
             System.out.println(CONTACT_UPDATED);
         }
         else System.out.println(NAME_NOT_EXIST);
-    }
-
-    private static void contactConflicts(ContactBook cBook){
-        boolean res = cBook.hasConflicts();
-        if(res)
-            System.out.println(CONFLICTS);
-        else
-            System.out.println(NO_CONFLICTS);
     }
 
     private static void listAllContacts(ContactBook cBook) {
